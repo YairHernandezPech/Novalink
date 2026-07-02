@@ -5,7 +5,7 @@
             NOVALINK
         </a>
         <div class="ms-auto">
-            <button class="btn btn-outline-success me-2">Iniciar Sesión</button>
+            <router-link to="/login" class="btn btn-outline-success me-2">Iniciar Sesión</router-link>
             <button class="btn btn-success">Registrarse</button>
         </div>
     </nav>
