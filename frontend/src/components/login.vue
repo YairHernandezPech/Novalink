@@ -78,8 +78,7 @@
         try {
           const response = await api.post('/login', this.form);
           sessionStorage.setItem('token', response.data.token);
-          alert("Bienvenido a NOVALINK");
-          //this.$router.push('/dashboard'); // Redirige al dashboard después del login
+          this.$router.push('/dashboard'); // Redirige al dashboard después del login
         } catch (error) {
           console.error('Error al iniciar sesión:', error);
           alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');

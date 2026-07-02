@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from './components/home.vue'; // Tu componente original
-import Login from './components/login.vue'; // El nuevo componente que creamos
+import Home from './components/home.vue';
+import Login from './components/login.vue';
+import Dashboard from './components/dashboard.vue';
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/login', component: Login }
+    { path: '/login', component: Login },
+    { path: '/dashboard', component: Dashboard }
 ];
 
 const router = createRouter({
