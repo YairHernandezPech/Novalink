@@ -145,19 +145,24 @@ export default {
             registroActual: {
                 nombre: "",
                 telefono: "",
-                nombre_whatsapp: ""
+                nombre_whatsapp: "",
+                usuario_id: null,
+                session_id: null
             }
         };
     },
     mounted() {
         //obtenemos el token del sessionStorage
-        const token = sessionStorage.getItem("token");
-
+        const userString = sessionStorage.getItem("user");
+        const user = JSON.parse(userString);
+        this.registroActual.usuario_id = user.id;
+        this.registroActual.session_id = user.id;
     },
     methods: {
         async createWhatsAppSession() {
             try {
-                console.log(this.registroActual);
+                const response = await api.post("/sesiones", this.registroActual);
+                console.log("SI SE AGREGO EN LA DB",response.data);
             } catch (error) {
                 console.error(error);
             }

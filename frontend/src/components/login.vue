@@ -78,6 +78,7 @@
         try {
           const response = await api.post('/login', this.form);
           sessionStorage.setItem('token', response.data.token);
+          sessionStorage.setItem('user', JSON.stringify(response.data.user));
           this.$router.push('/dashboard'); // Redirige al dashboard después del login
         } catch (error) {
           console.error('Error al iniciar sesión:', error);
